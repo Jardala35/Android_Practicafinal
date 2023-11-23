@@ -7,17 +7,17 @@
     <string name="btnH"> Habilidades </string>
     <string name="btnG"> Guardar Personaje </string>
     <string-array name="spinner2">
-        <item name="bardo">Bardo</item>
         <item name="barbaro">Bárbaro</item>
-        <item name="brujo">Brujo</item>
+        <item name="bardo">Bardo</item>
         <item name="clerigo">Clérigo</item>
         <item name="druida">Druida</item>
-        <item name="explorador">Explorador</item>
         <item name="guerrero">Guerrero</item>
-        <item name="hechicero">Hechicero</item>
-        <item name="mago">Mago</item>
         <item name="monje">Monje</item>
         <item name="paladin">Paladin</item>
+        <item name="explorador">Explorador</item>
         <item name="picaro">Picaro</item>
+        <item name="hechicero">Hechicero</item>
+        <item name="brujo">Brujo</item>
+        <item name="mago">Mago</item>
     </string-array>
 </resources>
