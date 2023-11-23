@@ -58,6 +58,7 @@
         android:id="@+id/button"
         android:layout_width="195dp"
         android:layout_height="60dp"
+        android:onClick="clickBoton"
         android:text="@string/lbl3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

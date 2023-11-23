@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 
 
@@ -16,13 +17,13 @@ public class Login extends AppCompatActivity {
         @Override
         public void onActivityResult(ActivityResult result) {
             if(result.getResultCode() == RESULT_OK){
-            xtt.setText("");
+           // xtt.setText("");
 
             }
         }
     });
     AdminSQLiteOpenHelper gestor;
-    EditText xtt = findViewById(R.id.editTextText);
+    //EditText xtt = findViewById(R.id.editTextText);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +31,8 @@ public class Login extends AppCompatActivity {
         gestor = new AdminSQLiteOpenHelper(this, "PracticaFinalDB", null, 1);
     }
 
-
-
-
+    public void clickBoton (View view){
+        Intent intent = new Intent(this, ActividadPrincipal.class);
+        stfrores.launch(intent);
+    }
 }
