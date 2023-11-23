@@ -15,6 +15,5 @@
 		android:layout_width="wrap_content"
 		android:layout_height="67dp"
 		android:layout_weight="1"
-		android:text="TextView"
-		android:textSize="40dp" />
+		android:textSize="30dp" />
 </LinearLayout>

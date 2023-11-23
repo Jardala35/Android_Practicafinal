@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Practica_final_Grupo9_SergioyPablo"
         tools:targetApi="31">
         <activity
+            android:name=".Estadisticas"
+            android:exported="false" />
+        <activity
             android:name=".ActividadPrincipal"
             android:exported="false" />
         <activity

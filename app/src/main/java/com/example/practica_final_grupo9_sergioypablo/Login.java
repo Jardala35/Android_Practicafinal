@@ -17,17 +17,18 @@ public class Login extends AppCompatActivity {
         @Override
         public void onActivityResult(ActivityResult result) {
             if(result.getResultCode() == RESULT_OK){
-           // xtt.setText("");
+           txt.setText("");
 
             }
         }
     });
     AdminSQLiteOpenHelper gestor;
-    //EditText xtt = findViewById(R.id.editTextText);
+    EditText txt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        txt = findViewById(R.id.editTextText);
         gestor = new AdminSQLiteOpenHelper(this, "PracticaFinalDB", null, 1);
     }
 
