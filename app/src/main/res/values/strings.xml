@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Practica_final_Grupo9_SergioyPablo</string>
+    <string name="lbl1"> Creador de Personajes de DnD </string>
+    <string name="lbl2"> Introduzca su nombre: </string>
+    <string name="lbl3"> Crear un Personaje de DnD </string>
+    <string name="btnE"> Estadisticas </string>
+    <string name="btnH"> Habilidades </string>
+    <string name="btnG"> Guardar Personaje </string>
+</resources>
