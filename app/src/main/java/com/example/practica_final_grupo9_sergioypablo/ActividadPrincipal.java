@@ -26,6 +26,15 @@ public class ActividadPrincipal extends AppCompatActivity {
     private int[] fotosClases;
 
     ActivityResultLauncher<Intent> stfrores = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+            @Override
+        public void onActivityResult(ActivityResult result) {
+            if(result.getResultCode() == RESULT_OK){
+
+
+            }
+        }
+    });
+    ActivityResultLauncher<Intent> gana = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
         @Override
         public void onActivityResult(ActivityResult result) {
             if(result.getResultCode() == RESULT_OK){
@@ -50,6 +59,11 @@ public class ActividadPrincipal extends AppCompatActivity {
     public void estadisticas(View view){
         Intent intent = new Intent(this, Estadisticas.class);
         stfrores.launch(intent);
+    }
+
+    public void habilidades(View view){
+        Intent intent = new Intent(this, Habilidades.class);
+        gana.launch(intent);
     }
 
     class PaisesAdapter extends BaseAdapter{

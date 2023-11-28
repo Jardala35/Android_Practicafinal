@@ -45,8 +45,6 @@ public class Estadisticas extends AppCompatActivity {
 
         this.iter = 0;
 
-
-
     }
 
     public void generar(View view){

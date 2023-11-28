@@ -13,13 +13,14 @@
         android:theme="@style/Theme.Practica_final_Grupo9_SergioyPablo"
         tools:targetApi="31">
         <activity
+            android:name=".Habilidades"
+            android:exported="false" />
+        <activity
             android:name=".Estadisticas"
             android:exported="false" />
         <activity
             android:name=".ActividadPrincipal"
-            android:exported="false" >
-
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".Login"
             android:exported="true">

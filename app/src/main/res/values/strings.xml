@@ -16,6 +16,24 @@
     <string name="generar"> GENERAR </string>
     <string name="dado"> dado </string>
 
+    <string name="atletismo">Atletismo</string>
+    <string name="acrobacias">Acrobacias</string>
+    <string name="jManos">Juego de Manos</string>
+    <string name="sigilo">Sigilo</string>
+    <string name="arcano">Arcano</string>
+    <string name="historia">Historia</string>
+    <string name="investigacion">Investigacion</string>
+    <string name="naturaleza">Naturaleza</string>
+    <string name="religion">Religion</string>
+    <string name="medicina">Medicina</string>
+    <string name="percepcion">Percepcion</string>
+    <string name="perspicacia">Perspicacia</string>
+    <string name="supervivencia">Supervivencia</string>
+    <string name="tratoAnimales">Trato de Animales</string>
+    <string name="engaño">Engaño</string>
+    <string name="intimidacion">Intimidacion</string>
+    <string name="interpretacion">Interpretacion</string>
+    <string name="persuasion">Persuasion</string>
 
     <string-array name="spinner2">
         <item name="barbaro">Bárbaro</item>
