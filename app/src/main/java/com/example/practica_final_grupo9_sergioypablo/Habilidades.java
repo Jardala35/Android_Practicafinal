@@ -10,7 +10,8 @@ import android.widget.CheckBox;
 public class Habilidades extends AppCompatActivity {
 
 	private CheckBox[] cajitas;
-
+	private int aux = 0;
+	private String habilidades = "";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,9 +37,8 @@ public class Habilidades extends AppCompatActivity {
 	}
 
 	public void habilidadesTotales(View view){
-		int aux = 0;
-		String habilidades = "";
-		habilidades = ((CheckBox) view).getText().toString();aux++;
+
+		habilidades += ((CheckBox) view).getText().toString();aux++;
 		if (aux == 3){
 			Intent intent = new Intent();
 			intent.putExtra("Habilidades", habilidades);
