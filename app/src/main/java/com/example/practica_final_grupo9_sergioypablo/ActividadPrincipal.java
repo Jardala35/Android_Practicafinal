@@ -1,7 +1,12 @@
 package com.example.practica_final_grupo9_sergioypablo;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,6 +24,16 @@ public class ActividadPrincipal extends AppCompatActivity {
     private String[] opSpinner;
     private Spinner opcionesSpinner;
     private int[] fotosClases;
+
+    ActivityResultLauncher<Intent> stfrores = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+        @Override
+        public void onActivityResult(ActivityResult result) {
+            if(result.getResultCode() == RESULT_OK){
+
+
+            }
+        }
+    });
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         opSpinner = getResources().getStringArray(R.array.spinner2);
@@ -30,6 +45,11 @@ public class ActividadPrincipal extends AppCompatActivity {
         PaisesAdapter adaptador = new PaisesAdapter();
         opcionesSpinner.setAdapter(adaptador);
 
+    }
+
+    public void estadisticas(View view){
+        Intent intent = new Intent(this, Estadisticas.class);
+        stfrores.launch(intent);
     }
 
     class PaisesAdapter extends BaseAdapter{

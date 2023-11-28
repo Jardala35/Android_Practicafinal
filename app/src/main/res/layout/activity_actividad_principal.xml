@@ -31,8 +31,10 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:id="@+id/layoutlinear"
+        android:layout_width="match_parent"
         android:layout_height="53dp"
+        android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,19 +45,22 @@
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="191dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
             android:backgroundTint="#371E0B"
+            android:onClick="estadisticas"
             android:text="@string/btnE" />
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="192dp"
+            android:layout_width="0dp"
             android:layout_height="53dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:layout_weight="1"
             android:backgroundTint="#BF892F"
             android:text="@string/btnH" />
     </LinearLayout>
@@ -71,5 +76,5 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner"
-        app:layout_constraintVertical_bias="0.514" />
+        app:layout_constraintVertical_bias="0.694" />
 </androidx.constraintlayout.widget.ConstraintLayout>

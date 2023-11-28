@@ -11,15 +11,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="0dp"
+        android:gravity="center"
         android:orientation="horizontal"
         android:textAlignment="inherit">
 
         <TextView
             android:id="@+id/fuerzatxt"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/f"
@@ -29,34 +30,37 @@
 
         <EditText
             android:id="@+id/editTextNumber"
-            android:layout_width="wrap_content"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0"
             android:ems="10"
             android:inputType="number" />
 
         <Button
-            android:id="@+id/button5"
-            android:layout_width="wrap_content"
+            android:id="@+id/btn1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="generar"
+            android:text="@string/generar" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="0dp"
+        android:gravity="center"
         android:orientation="horizontal"
         android:textAlignment="inherit">
 
         <TextView
             android:id="@+id/destrezatxt"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/d"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
@@ -64,33 +68,35 @@
 
         <EditText
             android:id="@+id/editTextNumber2"
-            android:layout_width="wrap_content"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0"
             android:ems="10"
             android:inputType="number" />
 
         <Button
-            android:id="@+id/button6"
-            android:layout_width="wrap_content"
+            android:id="@+id/btn2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="generar"
+            android:text="@string/generar" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="0dp"
+        android:gravity="center"
         android:orientation="horizontal"
         android:textAlignment="inherit">
 
         <TextView
             android:id="@+id/constituciontxt"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/co"
@@ -100,32 +106,34 @@
 
         <EditText
             android:id="@+id/editTextNumber3"
-            android:layout_width="wrap_content"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0"
             android:ems="10"
             android:inputType="number" />
 
         <Button
-            android:id="@+id/button7"
-            android:layout_width="wrap_content"
+            android:id="@+id/btn3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="generar"
+            android:text="@string/generar" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="0dp"
+        android:gravity="center"
         android:orientation="horizontal"
         android:textAlignment="inherit">
 
         <TextView
             android:id="@+id/inteligenciatxt"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/i"
@@ -135,32 +143,34 @@
 
         <EditText
             android:id="@+id/editTextNumber4"
-            android:layout_width="wrap_content"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0"
             android:ems="10"
             android:inputType="number" />
 
         <Button
-            android:id="@+id/button8"
-            android:layout_width="wrap_content"
+            android:id="@+id/btn4"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="generar"
+            android:text="@string/generar" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="0dp"
+        android:gravity="center"
         android:orientation="horizontal"
         android:textAlignment="inherit">
 
         <TextView
             android:id="@+id/sabiduriatxt"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/s"
@@ -170,32 +180,34 @@
 
         <EditText
             android:id="@+id/editTextNumber5"
-            android:layout_width="wrap_content"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0"
             android:ems="10"
             android:inputType="number" />
 
         <Button
-            android:id="@+id/button9"
-            android:layout_width="wrap_content"
+            android:id="@+id/btn5"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="generar"
+            android:text="@string/generar" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="0dp"
+        android:gravity="center"
         android:orientation="horizontal"
         android:textAlignment="inherit">
 
         <TextView
             android:id="@+id/carismatxt"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/ca"
@@ -205,17 +217,54 @@
 
         <EditText
             android:id="@+id/editTextNumber6"
-            android:layout_width="wrap_content"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0"
             android:ems="10"
             android:inputType="number" />
 
         <Button
-            android:id="@+id/button10"
+            android:id="@+id/btn6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="generar"
+            android:text="@string/generar" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layimg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/img1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:contentDescription="@string/dado"
+            app:srcCompat="@drawable/dado1" />
+
+        <ImageView
+            android:id="@+id/img2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/dado"
+            app:srcCompat="@drawable/dado1" />
+
+        <ImageView
+            android:id="@+id/img3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/dado"
+            app:srcCompat="@drawable/dado1" />
     </LinearLayout>
+
 </LinearLayout>
