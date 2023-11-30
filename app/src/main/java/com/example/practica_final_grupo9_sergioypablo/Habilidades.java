@@ -6,10 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 public class Habilidades extends AppCompatActivity {
 
-	private CheckBox[] cajitas;
+	private CheckBox[] cajitas = new CheckBox[18];
 	private int aux = 0;
 	private String habilidades = "";
 	@Override
@@ -30,7 +31,7 @@ public class Habilidades extends AppCompatActivity {
 		cajitas[11] = findViewById(R.id.checkPerspicacia);
 		cajitas[12] = findViewById(R.id.checkSupervivencia);
 		cajitas[13] = findViewById(R.id.checkTratoAnimales);
-		cajitas[14] = findViewById(R.id.checkEngaño);
+		cajitas[14] = findViewById(R.id.Enganio);
 		cajitas[15] = findViewById(R.id.checkIntimidacion);
 		cajitas[16] = findViewById(R.id.checkInterpretacion);
 		cajitas[17] = findViewById(R.id.checkPersuasion);
@@ -38,12 +39,17 @@ public class Habilidades extends AppCompatActivity {
 
 	public void habilidadesTotales(View view){
 
-		habilidades += ((CheckBox) view).getText().toString();aux++;
+		habilidades += ((CheckBox) view).getText().toString() + " ";aux++;
 		if (aux == 3){
 			Intent intent = new Intent();
 			intent.putExtra("Habilidades", habilidades);
+			Toast.makeText(this, "Habilidades seleccionadas :  " + habilidades, Toast.LENGTH_SHORT).show();
 			setResult(RESULT_OK, intent);
 			finish();
 		}
+	}
+
+	public void cogerMandar(){
+
 	}
 }
