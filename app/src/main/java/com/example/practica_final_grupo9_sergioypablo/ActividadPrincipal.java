@@ -31,7 +31,8 @@ public class ActividadPrincipal extends AppCompatActivity {
     private String habilidades = "";
     private String nombre = "";
     private EditText personaje;
-    private List<String> datosEditText = new ArrayList<>();
+    private static int[] estadisticas;
+
 
 
     ActivityResultLauncher<Intent> stfrores = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
@@ -39,11 +40,7 @@ public class ActividadPrincipal extends AppCompatActivity {
         public void onActivityResult(ActivityResult result) {
             if(result.getResultCode() == RESULT_OK){
                 Intent intent = result.getData();
-                datosEditText = new ArrayList<>();
-                for (int i = 0; i < 6; i++) {
-                    String dato = intent.getStringExtra("estadisticas" + i);
-                    datosEditText.add(String.valueOf(dato));
-                }
+                estadisticas = intent.getIntArrayExtra("estadisticas");
             }
         }
     });
@@ -95,14 +92,15 @@ public class ActividadPrincipal extends AppCompatActivity {
         valores.put("nombre_personaje", perso);
         valores.put("clase", spinnerSeleccionado);
         valores.put("habilidades", habilidades);
-        valores.put("fuerza", datosEditText.get(0));
-        valores.put("destreza", datosEditText.get(1));
-        valores.put("constitucion", datosEditText.get(2));
-        valores.put("inteligencia", datosEditText.get(3));
-        valores.put("sabiduria", datosEditText.get(4));
-        valores.put("carisma", datosEditText.get(5));
+        valores.put("fuerza", estadisticas[0]);
+        valores.put("destreza", estadisticas[1]);
+        valores.put("constitucion", estadisticas[2]);
+        valores.put("inteligencia", estadisticas[3]);
+        valores.put("sabiduria", estadisticas[4]);
+        valores.put("carisma", estadisticas[5]);
         db.insert("DnDTABLA", null, valores);
         db.close();
+        finish();
     }
 
     class PaisesAdapter extends BaseAdapter{
