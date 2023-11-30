@@ -4,6 +4,7 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	android:layout_gravity="center"
 	tools:context=".Habilidades">
 
 	<CheckBox
@@ -13,8 +14,10 @@
 		android:layout_marginStart="16dp"
 		android:layout_marginTop="48dp"
 		android:text="@string/atletismo"
+		app:layout_constraintHorizontal_weight="1"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_weight="1" />
 
 	<CheckBox
 		android:id="@+id/checkAcrobacias"
@@ -22,8 +25,10 @@
 		android:layout_height="48dp"
 		android:layout_marginStart="16dp"
 		android:text="@string/acrobacias"
+		app:layout_constraintHorizontal_weight="1"
 		app:layout_constraintStart_toEndOf="@+id/checkAtletismo"
-		app:layout_constraintTop_toTopOf="@+id/checkAtletismo" />
+		app:layout_constraintTop_toTopOf="@+id/checkAtletismo"
+		app:layout_constraintVertical_weight="1" />
 
 	<CheckBox
 		android:id="@+id/checkJManos"
@@ -31,8 +36,10 @@
 		android:layout_height="wrap_content"
 		android:text="@string/jManos"
 		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_weight="1"
 		app:layout_constraintStart_toEndOf="@+id/checkAcrobacias"
-		app:layout_constraintTop_toTopOf="@+id/checkAcrobacias" />
+		app:layout_constraintTop_toTopOf="@+id/checkAcrobacias"
+		app:layout_constraintVertical_weight="1" />
 
 	<CheckBox
 		android:id="@+id/checkSigilo"
@@ -41,8 +48,10 @@
 		android:layout_marginStart="28dp"
 		android:layout_marginTop="20dp"
 		android:text="@string/sigilo"
+		app:layout_constraintHorizontal_weight="1"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/checkAtletismo" />
+		app:layout_constraintTop_toBottomOf="@+id/checkAtletismo"
+		app:layout_constraintVertical_weight="1" />
 
 	<CheckBox
 		android:id="@+id/checkArcano"
@@ -50,8 +59,10 @@
 		android:layout_height="48dp"
 		android:layout_marginStart="16dp"
 		android:text="@string/arcano"
+		app:layout_constraintHorizontal_weight="1"
 		app:layout_constraintStart_toEndOf="@+id/checkSigilo"
-		app:layout_constraintTop_toTopOf="@+id/checkSigilo" />
+		app:layout_constraintTop_toTopOf="@+id/checkSigilo"
+		app:layout_constraintVertical_weight="1" />
 
 	<CheckBox
 		android:id="@+id/checkHistoria"
@@ -59,8 +70,10 @@
 		android:layout_height="48dp"
 		android:text="@string/historia"
 		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_weight="1"
 		app:layout_constraintStart_toEndOf="@+id/checkArcano"
-		app:layout_constraintTop_toTopOf="@+id/checkArcano" />
+		app:layout_constraintTop_toTopOf="@+id/checkArcano"
+		app:layout_constraintVertical_weight="1" />
 
 	<CheckBox
 		android:id="@+id/checkReligion"
@@ -71,8 +84,10 @@
 		android:text="@string/religion"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintHorizontal_bias="0.0"
+		app:layout_constraintHorizontal_weight="1"
 		app:layout_constraintStart_toEndOf="@+id/checkNaturaleza"
-		app:layout_constraintTop_toTopOf="@+id/checkNaturaleza" />
+		app:layout_constraintTop_toTopOf="@+id/checkNaturaleza"
+		app:layout_constraintVertical_weight="1" />
 
 	<CheckBox
 		android:id="@+id/checkNaturaleza"
@@ -80,8 +95,10 @@
 		android:layout_height="48dp"
 		android:layout_marginStart="12dp"
 		android:text="@string/naturaleza"
+		app:layout_constraintHorizontal_weight="1"
 		app:layout_constraintStart_toEndOf="@+id/checkInvestigacion"
-		app:layout_constraintTop_toTopOf="@+id/checkInvestigacion" />
+		app:layout_constraintTop_toTopOf="@+id/checkInvestigacion"
+		app:layout_constraintVertical_weight="1" />
 
 	<CheckBox
 		android:id="@+id/checkInvestigacion"
@@ -90,8 +107,10 @@
 		android:layout_marginStart="12dp"
 		android:layout_marginTop="20dp"
 		android:text="@string/investigacion"
+		app:layout_constraintHorizontal_weight="1"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/checkSigilo" />
+		app:layout_constraintTop_toBottomOf="@+id/checkSigilo"
+		app:layout_constraintVertical_weight="1" />
 
 	<CheckBox
 		android:id="@+id/checkPercepcion"
@@ -100,7 +119,9 @@
 		android:layout_marginEnd="16dp"
 		android:text="@string/percepcion"
 		app:layout_constraintEnd_toStartOf="@+id/checkPerspicacia"
-		app:layout_constraintTop_toTopOf="@+id/checkMedicina" />
+		app:layout_constraintHorizontal_weight="1"
+		app:layout_constraintTop_toTopOf="@+id/checkMedicina"
+		app:layout_constraintVertical_weight="1" />
 
 	<CheckBox
 		android:id="@+id/checkPerspicacia"
@@ -109,7 +130,9 @@
 		android:layout_marginEnd="16dp"
 		android:text="@string/perspicacia"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintTop_toTopOf="@+id/checkPercepcion" />
+		app:layout_constraintHorizontal_weight="1"
+		app:layout_constraintTop_toTopOf="@+id/checkPercepcion"
+		app:layout_constraintVertical_weight="1" />
 
 	<CheckBox
 		android:id="@+id/checkMedicina"
@@ -119,8 +142,10 @@
 		android:text="@string/medicina"
 		app:layout_constraintEnd_toStartOf="@+id/checkPercepcion"
 		app:layout_constraintHorizontal_bias="0.532"
+		app:layout_constraintHorizontal_weight="1"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/checkInvestigacion" />
+		app:layout_constraintTop_toBottomOf="@+id/checkInvestigacion"
+		app:layout_constraintVertical_weight="1" />
 
 	<CheckBox
 		android:id="@+id/checkEngaño"
@@ -129,7 +154,9 @@
 		android:layout_marginEnd="20dp"
 		android:text="@string/engaño"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintTop_toTopOf="@+id/checkTratoAnimales" />
+		app:layout_constraintHorizontal_weight="1"
+		app:layout_constraintTop_toTopOf="@+id/checkTratoAnimales"
+		app:layout_constraintVertical_weight="1" />
 
 	<CheckBox
 		android:id="@+id/checkTratoAnimales"
@@ -137,8 +164,10 @@
 		android:layout_height="48dp"
 		android:text="@string/tratoAnimales"
 		app:layout_constraintEnd_toStartOf="@+id/checkEngaño"
+		app:layout_constraintHorizontal_weight="1"
 		app:layout_constraintStart_toEndOf="@+id/checkSupervivencia"
-		app:layout_constraintTop_toTopOf="@+id/checkSupervivencia" />
+		app:layout_constraintTop_toTopOf="@+id/checkSupervivencia"
+		app:layout_constraintVertical_weight="1" />
 
 	<CheckBox
 		android:id="@+id/checkSupervivencia"
@@ -147,8 +176,10 @@
 		android:layout_marginStart="28dp"
 		android:layout_marginTop="24dp"
 		android:text="@string/supervivencia"
+		app:layout_constraintHorizontal_weight="1"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/checkMedicina" />
+		app:layout_constraintTop_toBottomOf="@+id/checkMedicina"
+		app:layout_constraintVertical_weight="1" />
 
 	<CheckBox
 		android:id="@+id/checkIntimidacion"
@@ -158,8 +189,10 @@
 		android:text="@string/intimidacion"
 		app:layout_constraintEnd_toStartOf="@+id/checkInterpretacion"
 		app:layout_constraintHorizontal_bias="0.559"
+		app:layout_constraintHorizontal_weight="1"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/checkSupervivencia" />
+		app:layout_constraintTop_toBottomOf="@+id/checkSupervivencia"
+		app:layout_constraintVertical_weight="1" />
 
 	<CheckBox
 		android:id="@+id/checkPersuasion"
@@ -168,7 +201,9 @@
 		android:layout_marginEnd="16dp"
 		android:text="@string/persuasion"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintTop_toTopOf="@+id/checkInterpretacion" />
+		app:layout_constraintHorizontal_weight="1"
+		app:layout_constraintTop_toTopOf="@+id/checkInterpretacion"
+		app:layout_constraintVertical_weight="1" />
 
 	<CheckBox
 		android:id="@+id/checkInterpretacion"
@@ -177,5 +212,7 @@
 		android:layout_marginEnd="16dp"
 		android:text="@string/interpretacion"
 		app:layout_constraintEnd_toStartOf="@+id/checkPersuasion"
-		app:layout_constraintTop_toTopOf="@+id/checkIntimidacion" />
+		app:layout_constraintHorizontal_weight="1"
+		app:layout_constraintTop_toTopOf="@+id/checkIntimidacion"
+		app:layout_constraintVertical_weight="1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
