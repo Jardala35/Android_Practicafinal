@@ -17,7 +17,8 @@ public class Login extends AppCompatActivity {
         @Override
         public void onActivityResult(ActivityResult result) {
             if(result.getResultCode() == RESULT_OK){
-                txt.setText("");
+                EditText txt2 = findViewById(R.id.editTextText);
+                txt2.setText("");
 
             }
         }
