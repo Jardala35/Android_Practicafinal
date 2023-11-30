@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -41,6 +42,8 @@ public class ActividadPrincipal extends AppCompatActivity {
             if(result.getResultCode() == RESULT_OK){
                 Intent intent = result.getData();
                 estadisticas = intent.getIntArrayExtra("estadisticas");
+                Button btnest = findViewById(R.id.button2);
+                btnest.setVisibility(View.INVISIBLE);
             }
         }
     });
@@ -51,6 +54,8 @@ public class ActividadPrincipal extends AppCompatActivity {
                 Intent data = result.getData();
                 if(data != null){
                     habilidades = data.getStringExtra("Habilidades");
+                    Button btnhab = findViewById(R.id.button3);
+                    btnhab.setVisibility(View.INVISIBLE);
                 }
 
             }

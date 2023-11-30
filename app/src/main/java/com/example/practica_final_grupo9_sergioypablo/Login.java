@@ -16,11 +16,9 @@ public class Login extends AppCompatActivity {
     ActivityResultLauncher<Intent> stfrores = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
         @Override
         public void onActivityResult(ActivityResult result) {
-            if(result.getResultCode() == RESULT_OK){
-                EditText txt2 = findViewById(R.id.editTextText);
-                txt2.setText("");
+            EditText txt2 = findViewById(R.id.editTextText);
+            txt2.setText("");
 
-            }
         }
     });
     AdminSQLiteOpenHelper gestor;
