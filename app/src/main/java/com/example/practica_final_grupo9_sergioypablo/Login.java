@@ -17,7 +17,7 @@ public class Login extends AppCompatActivity {
         @Override
         public void onActivityResult(ActivityResult result) {
             if(result.getResultCode() == RESULT_OK){
-           txt.setText("");
+                txt.setText("");
 
             }
         }
@@ -33,7 +33,10 @@ public class Login extends AppCompatActivity {
     }
 
     public void clickBoton (View view){
+        txt = findViewById(R.id.editTextText);
+        String nombre = txt.getText().toString();
         Intent intent = new Intent(this, ActividadPrincipal.class);
+        intent.putExtra("nombre", nombre);
         stfrores.launch(intent);
     }
 }

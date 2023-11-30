@@ -1,23 +1,26 @@
 package com.example.practica_final_grupo9_sergioypablo;
 
+import android.content.ContentValues;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.TextView;
+
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ActividadPrincipal extends AppCompatActivity {
 
@@ -25,13 +28,22 @@ public class ActividadPrincipal extends AppCompatActivity {
     private String[] opSpinner;
     private Spinner opcionesSpinner;
     private int[] fotosClases;
+    private String habilidades = "";
+    private String nombre = "";
+    private EditText personaje;
+    private List<String> datosEditText = new ArrayList<>();
+
 
     ActivityResultLauncher<Intent> stfrores = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
             @Override
         public void onActivityResult(ActivityResult result) {
             if(result.getResultCode() == RESULT_OK){
-
-
+                Intent intent = result.getData();
+                datosEditText = new ArrayList<>();
+                for (int i = 0; i < 6; i++) {
+                    String dato = intent.getStringExtra("estadisticas" + i);
+                    datosEditText.add(String.valueOf(dato));
+                }
             }
         }
     });
@@ -39,7 +51,10 @@ public class ActividadPrincipal extends AppCompatActivity {
         @Override
         public void onActivityResult(ActivityResult result) {
             if(result.getResultCode() == RESULT_OK){
-
+                Intent data = result.getData();
+                if(data != null){
+                    habilidades = data.getStringExtra("Habilidades");
+                }
 
             }
         }
@@ -54,7 +69,10 @@ public class ActividadPrincipal extends AppCompatActivity {
         opcionesSpinner = findViewById(R.id.spinner);
         PaisesAdapter adaptador = new PaisesAdapter();
         opcionesSpinner.setAdapter(adaptador);
-
+        Intent intent = getIntent();
+        if (intent != null) {
+             nombre = intent.getStringExtra("nombre");
+        }
     }
 
     public void estadisticas(View view){
@@ -65,6 +83,26 @@ public class ActividadPrincipal extends AppCompatActivity {
     public void habilidades(View view){
         Intent intent = new Intent(this, Habilidades.class);
         gana.launch(intent);
+    }
+
+    public void insertarCompleto(View view){
+        personaje = findViewById(R.id.editTextPersonaje);
+        String spinnerSeleccionado = opcionesSpinner.getSelectedItem().toString();
+        String perso = personaje.getText().toString();
+        SQLiteDatabase db = gestor.getReadableDatabase();
+        ContentValues valores = new ContentValues();
+        valores.put("nombre_jugador", nombre);
+        valores.put("nombre_personaje", perso);
+        valores.put("clase", spinnerSeleccionado);
+        valores.put("habilidades", habilidades);
+        valores.put("fuerza", datosEditText.get(0));
+        valores.put("destreza", datosEditText.get(1));
+        valores.put("constitucion", datosEditText.get(2));
+        valores.put("inteligencia", datosEditText.get(3));
+        valores.put("sabiduria", datosEditText.get(4));
+        valores.put("carisma", datosEditText.get(5));
+        db.insert("DnDTABLA", null, valores);
+        db.close();
     }
 
     class PaisesAdapter extends BaseAdapter{

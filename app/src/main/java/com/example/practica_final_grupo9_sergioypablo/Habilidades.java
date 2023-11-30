@@ -48,8 +48,4 @@ public class Habilidades extends AppCompatActivity {
 			finish();
 		}
 	}
-
-	public void cogerMandar(){
-
-	}
 }

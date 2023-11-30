@@ -8,7 +8,7 @@
     tools:context=".ActividadPrincipal">
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/editTextPersonaje"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginTop="52dp"
@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPersonaje" />
 
     <LinearLayout
         android:id="@+id/layoutlinear"
@@ -71,6 +71,7 @@
         android:layout_width="198dp"
         android:layout_height="52dp"
         android:backgroundTint="#2E216A"
+        android:onClick="insertarCompleto"
         android:text="@string/btnG"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
