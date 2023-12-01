@@ -33,7 +33,10 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         txt = findViewById(R.id.editTextText);
         gestor = new AdminSQLiteOpenHelper(this, "PracticaFinalDB", null, 1);
-
+        // Esto es para resetear la base de datos
+        //SQLiteDatabase db = gestor.getWritableDatabase();
+        //db.deleteDatabase(new File(db.getPath()));
+        //gestor.close();
     }
 
     public void clickBoton (View view){

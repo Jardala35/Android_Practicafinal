@@ -82,7 +82,7 @@ public class Estadisticas extends AppCompatActivity {
         iter++;
         view.setVisibility(View.INVISIBLE);
 
-        if (iter == 5) {
+        if (iter == 6) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
