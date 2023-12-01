@@ -8,9 +8,13 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class Habilidades extends AppCompatActivity {
 
 	private CheckBox[] cajitas = new CheckBox[18];
+
+	private ArrayList<String> lista = new ArrayList<>();
 	private int aux = 0;
 	private String habilidades = "";
 	@Override
@@ -31,19 +35,35 @@ public class Habilidades extends AppCompatActivity {
 		cajitas[11] = findViewById(R.id.checkPerspicacia);
 		cajitas[12] = findViewById(R.id.checkSupervivencia);
 		cajitas[13] = findViewById(R.id.checkTratoAnimales);
-		cajitas[14] = findViewById(R.id.Enganio);
+		cajitas[14] = findViewById(R.id.enganio);
 		cajitas[15] = findViewById(R.id.checkIntimidacion);
 		cajitas[16] = findViewById(R.id.checkInterpretacion);
 		cajitas[17] = findViewById(R.id.checkPersuasion);
+
 	}
 
 	public void habilidadesTotales(View view){
 
-		habilidades += ((CheckBox) view).getText().toString() + " ";aux++;
+		if(!((CheckBox) view).isChecked()){
+			for (byte i = 0; i < lista.size(); i++){
+				if(lista.get(i).equals(((CheckBox) view).getText().toString())){
+					lista.remove(i);
+					aux--;
+				}
+			}
+		}else{
+			lista.add(((CheckBox) view).getText().toString());
+			aux++;
+		}
+
 		if (aux == 3){
+			for (String str: lista) {
+				habilidades += str + ",";
+			}
+			habilidades = habilidades.substring(0, habilidades.length()-1);
 			Intent intent = new Intent();
 			intent.putExtra("Habilidades", habilidades);
-			Toast.makeText(this, "Habilidades seleccionadas :  " + habilidades, Toast.LENGTH_SHORT).show();
+			//Toast.makeText(this, "Habilidades seleccionadas :  " + habilidades, Toast.LENGTH_SHORT).show();
 			setResult(RESULT_OK, intent);
 			finish();
 		}

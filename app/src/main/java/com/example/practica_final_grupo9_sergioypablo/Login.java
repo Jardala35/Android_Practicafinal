@@ -7,9 +7,13 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.io.File;
 
 
 public class Login extends AppCompatActivity {
@@ -29,13 +33,19 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         txt = findViewById(R.id.editTextText);
         gestor = new AdminSQLiteOpenHelper(this, "PracticaFinalDB", null, 1);
+
     }
 
     public void clickBoton (View view){
         txt = findViewById(R.id.editTextText);
         String nombre = txt.getText().toString();
-        Intent intent = new Intent(this, ActividadPrincipal.class);
-        intent.putExtra("nombre", nombre);
-        stfrores.launch(intent);
+        if(!"".equals(nombre)){
+            Intent intent = new Intent(this, ActividadPrincipal.class);
+            intent.putExtra("nombre", nombre);
+            stfrores.launch(intent);
+        }else{
+            Toast.makeText(this, "Se requiere un nombre para continuar", Toast.LENGTH_SHORT).show();
+        }
+
     }
 }

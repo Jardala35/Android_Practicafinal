@@ -3,6 +3,7 @@ package com.example.practica_final_grupo9_sergioypablo;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -32,7 +34,7 @@ public class ActividadPrincipal extends AppCompatActivity {
     private String habilidades = "";
     private String nombre = "";
     private EditText personaje;
-    private static int[] estadisticas;
+    private int[] estadisticas;
 
 
 
@@ -43,7 +45,8 @@ public class ActividadPrincipal extends AppCompatActivity {
                 Intent intent = result.getData();
                 estadisticas = intent.getIntArrayExtra("estadisticas");
                 Button btnest = findViewById(R.id.button2);
-                btnest.setVisibility(View.INVISIBLE);
+                btnest.setClickable(false);
+                btnest.setBackgroundColor(Color.parseColor("#FF474444"));
             }
         }
     });
@@ -55,7 +58,8 @@ public class ActividadPrincipal extends AppCompatActivity {
                 if(data != null){
                     habilidades = data.getStringExtra("Habilidades");
                     Button btnhab = findViewById(R.id.button3);
-                    btnhab.setVisibility(View.INVISIBLE);
+                    btnhab.setClickable(false);
+                    btnhab.setBackgroundColor(Color.parseColor("#FF474444"));
                 }
 
             }
@@ -89,23 +93,31 @@ public class ActividadPrincipal extends AppCompatActivity {
 
     public void insertarCompleto(View view){
         personaje = findViewById(R.id.editTextPersonaje);
-        String spinnerSeleccionado = opcionesSpinner.getSelectedItem().toString();
-        String perso = personaje.getText().toString();
-        SQLiteDatabase db = gestor.getReadableDatabase();
-        ContentValues valores = new ContentValues();
-        valores.put("nombre_jugador", nombre);
-        valores.put("nombre_personaje", perso);
-        valores.put("clase", spinnerSeleccionado);
-        valores.put("habilidades", habilidades);
-        valores.put("fuerza", estadisticas[0]);
-        valores.put("destreza", estadisticas[1]);
-        valores.put("constitucion", estadisticas[2]);
-        valores.put("inteligencia", estadisticas[3]);
-        valores.put("sabiduria", estadisticas[4]);
-        valores.put("carisma", estadisticas[5]);
-        db.insert("DnDTABLA", null, valores);
-        db.close();
-        finish();
+        if(estadisticas == null || "".equals(habilidades)){
+            Toast.makeText(this, "Complete la seleccion de estadisticas y habilidades", Toast.LENGTH_SHORT).show();
+        }else if(personaje.getText().toString().equals("")) {
+            Toast.makeText(this, "Su personaje necesita un nombre", Toast.LENGTH_SHORT).show();
+        }else{
+            String spinnerSeleccionado = opcionesSpinner.getSelectedItem().toString();
+            String perso = personaje.getText().toString();
+            SQLiteDatabase db = gestor.getReadableDatabase();
+            ContentValues valores = new ContentValues();
+            valores.put("nombre_jugador", nombre);
+            valores.put("nombre_personaje", perso);
+            valores.put("clase", spinnerSeleccionado);
+            valores.put("habilidades", habilidades);
+            valores.put("fuerza", estadisticas[0]);
+            valores.put("destreza", estadisticas[1]);
+            valores.put("constitucion", estadisticas[2]);
+            valores.put("inteligencia", estadisticas[3]);
+            valores.put("sabiduria", estadisticas[4]);
+            valores.put("carisma", estadisticas[5]);
+            db.insert("DnDTABLA", null, valores);
+            db.close();
+            finish();
+
+        }
+
     }
 
     class PaisesAdapter extends BaseAdapter{
